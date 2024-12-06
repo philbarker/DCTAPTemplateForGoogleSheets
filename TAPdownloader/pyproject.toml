@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools >=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TAPdownloader"
+version = "0.0.1a.1"
+description = "Download a DC TAP froma google sheets."
+readme = "README.MD"
+authors = [{name = "Phil Barker", email="phil.barker@pjjk.co.uk"}]
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Natural Language :: English",
+]
+license = { file = "LICENSE" }
+keywords = ["RDF", "metadata application profile", "DCTAP"]
+dependencies = [
+    "requests >= 2.32"
+]
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = [
+    "pytest >= 6.2",
+    "black >= 21.6b0",
+]
+
+[project.urls]
+Homepage = "https://github.com/philbarker/DCTAPTemplate/"
+
+[project.scripts]
+downloadtap = "downloader.__main__:main"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src/downloader"
+]
+minversion = "6.0"
+testpaths = [
+    "tests",
+]
